@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>OCR</title>
+<h1>Upload new file</h1>
+<form method=post enctype=multipart/form-data>
+    <input type=file name=image>
+    <input type=submit value=Extract>
+    <br>
+    <label for="dtype">Document Type :</label>
+                <select name="type" id="dtype">
+                    <option value="Aadhar_Card">Aadhar Card</option>
+                    <option  value="Driving_Licence">Driving Licence</option>
+                    <option value="Pancard">Pancard</option>
+                    
+                </select>
+    <br>
+    {% if extract %}
+
+    <h3>Extracted Text: {{extract}}</h3>
+    {% endif %}
+</form>
