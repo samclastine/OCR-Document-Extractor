@@ -2,7 +2,6 @@ from flask import Flask
 from flask import render_template,request
 import os
 from processings import text_detection
-
 from werkzeug.utils import secure_filename
 import cv2
 
@@ -20,8 +19,8 @@ def upload_predict():
             os.mkdir(UPLOAD_FOLDER + doc_type)
 
         img_name = secure_filename(image_file.filename)
+        
 
-        # setting filename that is being received to current time stamp with its directory
         save_path = UPLOAD_FOLDER + doc_type + "/" + img_name
         image_file.save(save_path)
         
